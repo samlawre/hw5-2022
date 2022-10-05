@@ -1,1 +1,117 @@
+/* This is the new style sheet to write code on */
+#logo{
+    animation: hw5_move 5s
+}
 
+@keyframes hw5_move{
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity:1;}
+  }
+
+body{
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.card > header{
+background-color: #288088;
+border:2px solid #45ADAD;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-right: 0px;
+padding-left: 0px;
+border-top-left-radius: 50px;
+border-top-right-radius: 50px;
+}
+
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.nav_links{
+    display:flex;
+    flex-direction:column;
+}
+
+a:visited{ /*need to fix this*/
+    color: blue;
+    text-decoration-color: blue;
+}
+
+.card{
+    flex-basis:450px;
+}
+
+.pricing{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width:300px;
+}
+
+.gallery{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width:900px){
+    header{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    .card{
+        flex-basis:275px;
+    }
+    .pricing{
+        display: flex;
+        align-items: center;
+    }
+   body>header{
+        position:sticky;
+        top:0;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+    header #logo{
+      animation:none;
+    }
+  }
+
+  @media (orientation: portrait) { /*figure out how to see if this is right*/
+    body{
+        font-family:Arial, Helvetica;
+        /* background-color: #f1f1f1; */
+    }
+    header{
+        display: flex;
+        justify-content: center;
+    }
+    header .nav_links{
+        display:flex;
+        flex-direction: row
+    }
+
+
+  }
