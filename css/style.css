@@ -41,7 +41,7 @@ border-top-right-radius: 50px;
     flex-direction:column;
 }
 
-a:visited{ /*need to fix this*/
+a:visited{ 
     color: blue;
     text-decoration-color: blue;
 }
@@ -99,19 +99,45 @@ a:visited{ /*need to fix this*/
     }
   }
 
-  @media (orientation: portrait) { /*figure out how to see if this is right*/
+  @media print {
     body{
         font-family:Arial, Helvetica;
-        /* background-color: #f1f1f1; */
+        background-image: none;
     }
     header{
-        display: flex;
-        justify-content: center;
+        /* display: flex;
+        justify-content: center; */
+        align-items:stretch;
     }
-    header .nav_links{
+    header img{
+        align-self:center;
+    }
+    
+    .nav_links{
         display:flex;
-        flex-direction: row
+        flex-direction: row;
+        justify-content: space-around;
     }
 
+    .pricing{
+        display:flex;
+        align-items: flex-end;
+        flex-flow: row nowrap;
+    }
+
+    .card{
+        display:flex;
+        flex-direction:column;
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    .card ul li:nth-child(2)::after{
+        content: '\1F44D';
+    }
+
+    .gallery, #gallery{
+        display:none;
+    }
 
   }
